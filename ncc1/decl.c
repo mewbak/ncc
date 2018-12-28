@@ -196,7 +196,7 @@ type_specifier(ss)
         lex();
         if (token.kk == KK_FLOAT) {
             lex();
-            return new_type(T_LFLOAT);
+            return new_type(T_DOUBLE);
         }
         if (token.kk == KK_INT) lex();
         return new_type(T_LONG);

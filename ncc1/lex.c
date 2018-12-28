@@ -53,7 +53,7 @@ fcon()
     char * endptr;
     int    kk;
 
-    kk = KK_LFCON;
+    kk = KK_DCON;
     errno = 0;
     token.u.f = strtod(yytext, &endptr);
     if (toupper(yych) != 'L') {
@@ -196,7 +196,7 @@ yyinit()
 /* determine the type and value of numeric constants. note that 
    we differ from K&R here: constants aren't auto-promoted based
    on value. they're 'int' or 'float' unless suffixed with L, in
-   which case they are 'long' or 'long float'. */
+   which case they are 'long' or 'double'. */
 
 static 
 icon()

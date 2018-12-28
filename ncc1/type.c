@@ -125,7 +125,7 @@ size_of(type)
             size *= 2;
         else if (type->ts & (T_INT | T_UINT | T_FLOAT)) 
             size *= 4;
-        else if (type->ts & (T_LONG | T_ULONG | T_LFLOAT | T_PTR))
+        else if (type->ts & (T_LONG | T_ULONG | T_DOUBLE | T_PTR))
             size *= 8;
         else if (type->ts & T_FUNC)
             error(ERROR_ILLFUNC);
@@ -163,7 +163,7 @@ align_of(type)
             align = 2;
         else if (type->ts & (T_INT | T_UINT | T_FLOAT)) 
             align = 4;
-        else if (type->ts & (T_LONG | T_ULONG | T_LFLOAT | T_PTR))
+        else if (type->ts & (T_LONG | T_ULONG | T_DOUBLE | T_PTR))
             align = 8;
         else if (type->ts & T_FUNC)
             error(ERROR_ILLFUNC);
@@ -241,7 +241,7 @@ static struct
     { T_LONG, "long" },
     { T_ULONG, "unsigned long" },
     { T_FLOAT, "float" },
-    { T_LFLOAT, "long float" },
+    { T_DOUBLE, "double" },
     { T_PTR, "pointer to " },
     { T_FUNC, "function returning " },
     { T_ARRAY, "array[" }

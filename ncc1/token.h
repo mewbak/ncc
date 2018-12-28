@@ -60,7 +60,7 @@ struct token
 #define KK_IDENT                1       /* identifier: u.text */
 #define KK_STRLIT               2       /* string literal: u.text */
 #define KK_FCON                 3       /* float constant: u.f */
-#define KK_LFCON                4       /* long float constant: u.f */
+#define KK_DCON                 4       /* double constant: u.f */
 #define KK_ICON                 5       /* int constant: u.i */
 #define KK_LCON                 6       /* long constant: u.i */
 

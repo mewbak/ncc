@@ -88,7 +88,7 @@ output_operand(tree)
         if (tree->type->ts & T_FLOAT) {
             f = tree->u.con.f;
             fprintf(output_file, "0x%x", *((unsigned *) &f));
-        } else if (tree->type->ts & T_LFLOAT) {
+        } else if (tree->type->ts & T_DOUBLE) {
             lf = tree->u.con.f;
             fprintf(output_file, "0x%lx", *((unsigned long *) &lf));
         } else 

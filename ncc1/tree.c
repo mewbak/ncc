@@ -354,7 +354,7 @@ usuals(tree)
     int           ts;
 
     if ((left->type->ts & T_IS_ARITH) && (right->type->ts & T_IS_ARITH)) {
-        for (ts = T_LFLOAT; ts != T_INT; ts >>= 1) {
+        for (ts = T_DOUBLE; ts != T_INT; ts >>= 1) {
             if ((left->type->ts & ts) || (right->type->ts & ts))
                 break;
         }
@@ -657,7 +657,7 @@ primary_expression()
     case KK_ICON:   tree = int_tree(T_INT, token.u.i); lex(); return tree;
     case KK_LCON:   tree = int_tree(T_LONG, token.u.i); lex(); return tree;
     case KK_FCON:   tree = float_tree(T_FLOAT, token.u.f); lex(); return tree;
-    case KK_LFCON:  tree = float_tree(T_LFLOAT, token.u.f); lex(); return tree;
+    case KK_DCON:   tree = float_tree(T_DOUBLE, token.u.f); lex(); return tree;
 
     default:
         error(ERROR_SYNTAX);

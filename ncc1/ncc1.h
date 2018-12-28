@@ -22,10 +22,7 @@
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-#ifndef __STDC__
-typedef long float double;
-#define strtod strtolf
-#else
+#ifdef __STDC__
 extern void output(char * fmt, ...);
 #endif
 
