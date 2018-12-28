@@ -61,8 +61,11 @@ struct token
 #define KK_STRLIT               2       /* string literal: u.text */
 #define KK_FCON                 3       /* float constant: u.f */
 #define KK_DCON                 4       /* double constant: u.f */
-#define KK_ICON                 5       /* int constant: u.i */
-#define KK_LCON                 6       /* long constant: u.i */
+#define KK_LDCON                5       /* long double constant: u.f */
+#define KK_ICON                 6       /* int constant: u.i */
+#define KK_UCON                 7       /* unsigned int constant: u.i */
+#define KK_LCON                 8       /* long constant: u.i */
+#define KK_ULCON                9       /* unsigned long constant: u.i */
 
 #define KK_NL                   10      /* pseudo tokens */
 #define KK_HASH                 11
@@ -120,25 +123,32 @@ struct token
 #define KK_BREAK                71      
 #define KK_CASE                 72
 #define KK_CHAR                 73
-#define KK_CONTINUE             74
-#define KK_DEFAULT              75
-#define KK_DO                   76
-#define KK_ELSE                 77
-#define KK_EXTERN               78
-#define KK_FLOAT                79
-#define KK_FOR                  80
-#define KK_GOTO                 81
-#define KK_IF                   82
-#define KK_INT                  83
-#define KK_LONG                 84
-#define KK_REGISTER             85
-#define KK_RETURN               86
-#define KK_SHORT                87
-#define KK_SIZEOF               88
-#define KK_STATIC               89
-#define KK_STRUCT               90
-#define KK_SWITCH               91
-#define KK_TYPEDEF              92
-#define KK_UNION                93
-#define KK_UNSIGNED             94
-#define KK_WHILE                95
+#define KK_CONST                74
+#define KK_CONTINUE             75
+#define KK_DEFAULT              76
+#define KK_DO                   77
+#define KK_DOUBLE               78
+#define KK_ELSE                 79
+#define KK_ENUM                 80
+#define KK_EXTERN               81
+#define KK_FLOAT                82
+#define KK_FOR                  83
+#define KK_GOTO                 84
+#define KK_IF                   85
+#define KK_INT                  86
+#define KK_LONG                 87
+#define KK_REGISTER             88
+#define KK_RETURN               89
+#define KK_SHORT                90
+#define KK_SIGNED               91
+#define KK_SIZEOF               92
+#define KK_STATIC               93
+#define KK_STRUCT               94
+#define KK_SWITCH               95
+#define KK_TYPEDEF              96
+#define KK_UNION                97
+#define KK_UNSIGNED             98
+#define KK_VOID                 99
+#define KK_VOLATILE             100
+#define KK_WHILE                101
+

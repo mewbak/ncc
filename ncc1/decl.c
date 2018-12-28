@@ -170,6 +170,23 @@ type_specifier(ss)
         }
         break;
 
+    case KK_SIGNED:
+        lex();
+        if (token.kk == KK_SHORT) {
+            lex();
+            if (token.kk == KK_INT) lex();
+            return new_type(T_SHORT);
+        } else if (token.kk == KK_LONG) {
+            lex();
+            if (token.kk == KK_INT) lex();
+            return new_type(T_LONG);
+        } else if (token.kk == KK_CHAR) {
+            lex();
+            return new_type(T_SCHAR);
+        }
+        if (token.kk == KK_INT) lex();
+        return new_type(T_INT);
+
     case KK_UNSIGNED:
         lex();
         if (token.kk == KK_SHORT) {
@@ -194,16 +211,18 @@ type_specifier(ss)
 
     case KK_LONG:
         lex();
-        if (token.kk == KK_FLOAT) {
+        if (token.kk == KK_DOUBLE) {
             lex();
-            return new_type(T_DOUBLE);
+            return new_type(T_LDOUBLE);
         }
         if (token.kk == KK_INT) lex();
         return new_type(T_LONG);
 
     case KK_INT: lex(); return new_type(T_INT);
     case KK_FLOAT: lex(); return new_type(T_FLOAT);
+    case KK_DOUBLE: lex(); return new_type(T_DOUBLE);
     case KK_CHAR: lex(); return new_type(T_CHAR);
+    case KK_VOID: lex(); return new_type(T_VOID);
     }
 
     if (!(ss && *ss)) 

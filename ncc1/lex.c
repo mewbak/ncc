@@ -170,12 +170,13 @@ yystash(c)
 /* called by main() after setting 'yyin' but before the first
    call to lex() to initialize the scanner. */
 
-static char * keyword[] =
+static char * keyword[] =   /* ordered same as KK_* in token.h */
 {
-    "auto", "break", "case", "char", "continue", "default", "do",
-    "else", "extern", "float", "for", "goto", "if", "int", "long", 
-    "register", "return", "short", "sizeof", "static", "struct", 
-    "switch", "typedef", "union", "unsigned", "while"
+    "auto", "break", "case", "char", "const", "continue", "default", "do",
+    "double", "else", "enum", "extern", "float", "for", "goto", "if", "int", 
+    "long", "register", "return", "short", "signed", "sizeof", "static", 
+    "struct", "switch", "typedef", "union", "unsigned", "void", "volatile", 
+    "while"
 };
 
 #define NR_KEYWORDS (sizeof(keyword)/sizeof(*keyword))
