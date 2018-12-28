@@ -1,0 +1,7 @@
+*.o
+ncc
+nld
+nas
+nobj
+ncc1/ncc1
+ncpp/ncpp
