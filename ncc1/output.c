@@ -79,7 +79,7 @@ static
 output_operand(tree)
     struct tree * tree;
 {
-    double     lf;
+    double     d;
     float      f;
     int        indexed;
 
@@ -89,8 +89,8 @@ output_operand(tree)
             f = tree->u.con.f;
             fprintf(output_file, "0x%x", *((unsigned *) &f));
         } else if (tree->type->ts & T_DOUBLE) {
-            lf = tree->u.con.f;
-            fprintf(output_file, "0x%lx", *((unsigned long *) &lf));
+            d = tree->u.con.f;
+            fprintf(output_file, "0x%lx", *((unsigned long *) &d));
         } else 
             fprintf(output_file, "%ld", tree->u.con.i);
 

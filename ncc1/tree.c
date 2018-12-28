@@ -1019,7 +1019,7 @@ debug_tree(tree)
             if (tree->type->ts & T_IS_INTEGRAL)
                 fprintf(stderr, "=0x%lX", tree->u.con.i);
             else
-                fprintf(stderr, "=%lf", tree->u.con.f);
+                fprintf(stderr, "=%f", tree->u.con.f);
 
             break;
 
